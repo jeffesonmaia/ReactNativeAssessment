@@ -4,9 +4,13 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import { actions } from './actions'
-import PageContainer from '~/components/PageContainer/PageContainer'
 import {
-  Header, CategoryList, LoaderContainer, CategoryButton, CategoryButtonLabel
+  Header,
+  CategoryList,
+  LoaderContainer,
+  CategoryButton,
+  CategoryButtonLabel,
+  PageContainer
 } from './style'
 
 const mapStateToProps = ({ categories }) => ({ categories })
@@ -15,6 +19,7 @@ const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch)
 const Categories = ({
   categories,
   getCategories,
+  navigation,
 }) => {
   const handleError = error => {
     Alert.alert(error)
@@ -39,9 +44,11 @@ const Categories = ({
       <Header>Categorias</Header>
       <CategoryList
         data={categories.data}
-        keyExtractor={index => String(index)}
+        keyExtractor={(item, index) => String(index)}
         renderItem={({ item }) => (
-          <CategoryButton>
+          <CategoryButton
+            onPress={() => navigation.navigate('Question', { category: item })}
+          >
             <CategoryButtonLabel>
               {item.name}
             </CategoryButtonLabel>

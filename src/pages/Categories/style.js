@@ -1,10 +1,5 @@
 import styled from 'styled-components/native'
 
-export const CategoryList = styled.FlatList`
-  flex: 1;
-  overflow: visible;
-  padding: 10px;
-`
 export const CategoryButton = styled.TouchableOpacity`
   align-items: center;
   background: #FFFFFF;
@@ -22,16 +17,29 @@ export const CategoryButtonLabel = styled.Text`
   line-height: 19px;
 `
 
+export const CategoryList = styled.FlatList`
+  flex: 1;
+  padding: 10px;
+  width: 100%;
+`
+
 export const Header = styled.Text`
-  font-family: Avenir;
-  font-style: normal;
-  font-weight: 900;
+  font-weight: bold;
   font-size: 20px;
   padding: 20px;
+  width: 100%;
 `
 
 export const LoaderContainer = styled.View`
   align-items: center;
   flex: 1;
   justify-content: center;
+`
+
+export const PageContainer = styled.View`
+  align-items: center;
+  background: #E5E5E5;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
 `
