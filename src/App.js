@@ -15,7 +15,7 @@ import Routes from '~/routes'
 
 const App = () => (
   <Provider store={store}>
-    <StatusBar barStyle="dark-content" />
+    <StatusBar backgroundColor="#343C58" />
     <Routes />
   </Provider>
 )

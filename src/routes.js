@@ -1,15 +1,20 @@
 import { createAppContainer } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
 
-import SamplePage from '~/pages/SamplePage/SamplePage'
+import Categories from '~/pages/Categories/Categories'
 
 const Routes = createAppContainer(
   createStackNavigator(
     {
-      SamplePage,
+      Categories: {
+        screen: Categories,
+        navigationOptions: () => ({
+          title: 'Dev Mobile',
+        }),
+      },
     },
     {
-      initialRouteName: 'SamplePage',
+      initialRouteName: 'Categories',
     }
   )
 )
