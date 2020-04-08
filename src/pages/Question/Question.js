@@ -69,27 +69,27 @@ const Question = ({
       const lastAnswered = answeredQuestions.slice(
         (answeredQuestions.length - 2), answeredQuestions.length
       )
-      let foo = lastAnswered.filter(item => item.isCorrectAnswer === false
+      let misses = lastAnswered.filter(item => item.isCorrectAnswer === false
         && item.difficulty === 'medium')
-      if (foo.length === 2) {
+      if (misses.length === 2) {
         return 'easy'
       }
 
-      foo = lastAnswered.filter(item => item.isCorrectAnswer === false
+      misses = lastAnswered.filter(item => item.isCorrectAnswer === false
         && item.difficulty === 'hard')
-      if (foo.length === 2) {
+      if (misses.length === 2) {
         return 'medium'
       }
 
-      let bar = lastAnswered.filter(item => item.isCorrectAnswer
+      let hits = lastAnswered.filter(item => item.isCorrectAnswer
         && item.difficulty === 'medium')
-      if (bar.length === 2) {
+      if (hits.length === 2) {
         return 'hard'
       }
 
-      bar = lastAnswered.filter(item => item.isCorrectAnswer
+      hits = lastAnswered.filter(item => item.isCorrectAnswer
         && item.difficulty === 'easy')
-      if (bar.length === 2) {
+      if (hits.length === 2) {
         return 'medium'
       }
     }
